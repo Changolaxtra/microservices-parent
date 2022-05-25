@@ -1,6 +1,4 @@
 spring:
-  servlet:
-    context-path: 'media'
   cloud:
     consul:
       port: '8500'
@@ -12,3 +10,10 @@ spring:
     name: media-service
 server:
   port: '8082'
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - mappings

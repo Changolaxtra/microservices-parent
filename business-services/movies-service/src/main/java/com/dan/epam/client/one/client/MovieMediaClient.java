@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name = "media-service")
 public interface MovieMediaClient {
 
-  @GetMapping("/media/movie/{id}")
+  @GetMapping("/movie/{id}")
   MovieMedia findById(@PathVariable("id") Integer id);
 }

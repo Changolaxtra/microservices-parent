@@ -1,6 +1,4 @@
 spring:
-  servlet:
-    context-path: 'movies'
   cloud:
     consul:
       port: '8500'
@@ -12,3 +10,10 @@ spring:
     name: movies-service
 server:
   port: '8081'
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - mappings

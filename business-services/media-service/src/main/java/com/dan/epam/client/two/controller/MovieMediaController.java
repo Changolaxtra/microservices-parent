@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
-@RestController("/movie")
+@RestController
 public class MovieMediaController {
 
   private final MovieMediaService movieMediaService;
 
-  @GetMapping("/{id}")
+  @GetMapping("/movie/{id}")
   public MovieMedia getAllMovieMedias(@PathVariable Integer id) {
     return movieMediaService.getMovieMedia(id);
   }

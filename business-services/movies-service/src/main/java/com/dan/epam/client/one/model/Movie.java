@@ -1,6 +1,5 @@
 package com.dan.epam.client.one.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,7 +20,5 @@ public class Movie {
   String actors;
   String plot;
   List<String> genres;
-
-  @JsonIgnore
   String posterUrl;
 }
