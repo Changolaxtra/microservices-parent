@@ -1,0 +1,14 @@
+spring:
+  servlet:
+    context-path: 'media'
+  cloud:
+    consul:
+      port: '8500'
+      discovery:
+        instance-id: ${spring.application.name}:${server.port}
+        instanceZone: zone1
+      host: discovery
+  application:
+    name: media-service
+server:
+  port: '8082'

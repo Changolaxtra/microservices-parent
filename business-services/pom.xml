@@ -15,9 +15,8 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>one</module>
-    <module>two</module>
-    <module>two-api</module>
+    <module>movies-service</module>
+    <module>media-service</module>
     <module>common</module>
   </modules>
 

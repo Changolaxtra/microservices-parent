@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    consul:
+      port: '8500'
+      discovery:
+        instance-id: ${spring.application.name}:${server.port}
+      config: 'true'
+      host: discovery
+  application:
+    name: config-server
+server:
+  port: '9001'

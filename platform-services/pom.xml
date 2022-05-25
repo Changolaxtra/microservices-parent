@@ -15,8 +15,7 @@
   <name>platform-services</name>
 
   <modules>
-    <module>discovery</module>
-    <module>apigateway</module>
+    <module>gateway</module>
   </modules>
 
   <properties>
