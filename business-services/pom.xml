@@ -17,7 +17,6 @@
   <modules>
     <module>movies-service</module>
     <module>media-service</module>
-    <module>common</module>
   </modules>
 
   <properties>

@@ -9,20 +9,20 @@ services:
       - "8600:8600/udp"
     networks:
       - consul-net
-  config-server:
+  gateway:
     depends_on:
       - discovery
     image: openjdk:8-alpine
     ports:
-      - 9001:9001
+      - 8080:8080
     volumes:
-      - "./business-services/common/target/common-1.0.jar:/app.jar"
+      - "./platform-services/gateway/target/gateway-1.0.jar:/app.jar"
     command: "java -jar app.jar"
     networks:
       - consul-net
   movies-service:
     depends_on:
-      - config-server
+      - gateway
     image: openjdk:8-alpine
     ports:
       - 8081:8081
@@ -33,23 +33,12 @@ services:
       - consul-net
   media-service:
     depends_on:
-      - config-server
+      - gateway
     image: openjdk:8-alpine
     ports:
       - 8082:8082
     volumes:
       - "./business-services/media-service/target/media-service-1.0.jar:/app.jar"
-    command: "java -jar app.jar"
-    networks:
-      - consul-net
-  gateway:
-    depends_on:
-      - config-server
-    image: openjdk:8-alpine
-    ports:
-      - 8080:8080
-    volumes:
-      - "./platform-services/gateway/target/gateway-1.0.jar:/app.jar"
     command: "java -jar app.jar"
     networks:
       - consul-net
