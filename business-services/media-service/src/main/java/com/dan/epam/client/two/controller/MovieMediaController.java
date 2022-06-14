@@ -13,7 +13,7 @@ public class MovieMediaController {
 
   private final MovieMediaService movieMediaService;
 
-  @GetMapping("/movie/{id}")
+  @GetMapping("/movies/{id}")
   public MovieMedia getAllMovieMedias(@PathVariable Integer id) {
     return movieMediaService.getMovieMedia(id);
   }

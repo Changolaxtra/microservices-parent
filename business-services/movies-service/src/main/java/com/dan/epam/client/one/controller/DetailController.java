@@ -14,7 +14,7 @@ public class DetailController {
 
   private final DetailMovieService detailMovieService;
 
-  @GetMapping("/list")
+  @GetMapping
   public List<Movie> getMoviesList(){
     return detailMovieService.getAll();
   }

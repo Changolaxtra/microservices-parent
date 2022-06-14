@@ -26,9 +26,9 @@ spring:
         - id: movies-service
           uri: lb://movies-service
           predicates:
-            - Path=/movies/**
+            - Path=/movies**
           filters:
-            - RewritePath=/movies/(?<path>.*), /$\{path}
+            - RewritePath=/movies(?<path>.*), /$\{path}
 
 
 logging.level.com.netflix: DEBUG
