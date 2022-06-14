@@ -29,6 +29,18 @@ spring:
             - Path=/movies**
           filters:
             - RewritePath=/movies(?<path>.*), /$\{path}
+        - id: media-service-health
+          uri: lb://media-service
+          predicates:
+            - Path=/actuator/**
+          filters:
+            - RewritePath=/actuator/(?<path>.*), /$\{path}
+        - id: movies-service-health
+          uri: lb://movies-service
+          predicates:
+            - Path=/actuator**
+          filters:
+            - RewritePath=/actuator(?<path>.*), /$\{path}
 
 
 logging.level.com.netflix: DEBUG
